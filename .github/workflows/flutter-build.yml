@@ -15,11 +15,12 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-        - name: Create Environment File
-  run: |
-    printf 'API_KEY=%s\n' "$TMDB_API_KEY" > .env
-  env:
-    TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+
+      - name: Create Environment File
+        run: |
+          printf 'API_KEY=%s\n' "$TMDB_API_KEY" > .env
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
 
       - name: Setup Java
         uses: actions/setup-java@v4
