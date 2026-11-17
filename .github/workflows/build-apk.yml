@@ -29,7 +29,7 @@ jobs:
       - name: Generate ikon dan splash Nuflix
         run: |
           dart run flutter_launcher_icons
-          dart run flutter_native_splash:create
+          dart run flutter_native_splash:create --path=splash.yaml
 
       - name: Build APK release
         run: flutter build apk --release
